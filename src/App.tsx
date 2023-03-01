@@ -9,7 +9,7 @@ import { Col } from "react-bootstrap";
 function App(): JSX.Element {
     return (
         <div className="App">
-            <header className="App-header">
+            <header className="App-header" style={{backgroundColor: "darkgreen"}}>>
                 UD CISC275 with React Hooks and TypeScript
             </header>
             <h1> Here is a Header! </h1>
@@ -28,6 +28,12 @@ function App(): JSX.Element {
                     Log Hello World
                 </Button>
             </div>
+            <Container>
+                <Row>
+                    <Col>First column.</Col>
+                    <Col>Second column.</Col>
+                </Row>
+            </Container>
         </div>
     );
 }
