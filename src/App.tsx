@@ -9,7 +9,7 @@ import { Col } from "react-bootstrap";
 function App(): JSX.Element {
     return (
         <div className="App">
-            <header className="App-header" style={{backgroundColor: "darkgreen"}}>>
+            <header className="App-header">
                 UD CISC275 with React Hooks and TypeScript
             </header>
             <h1> Here is a Header! </h1>
@@ -37,5 +37,5 @@ function App(): JSX.Element {
         </div>
     );
 }
-   
+
 export default App;
