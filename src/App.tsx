@@ -13,7 +13,7 @@ function App(): JSX.Element {
                 UD CISC275 with React Hooks and TypeScript
             </header>
             <h1> Here is a Header! </h1>
-            <img src={Beagle} alt="Photo of a Beagle!" />
+            <img src={Beagle} alt="Photo of a Dog!" />
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload. Karen Sousa. Hello World.
@@ -37,5 +37,5 @@ function App(): JSX.Element {
         </div>
     );
 }
-
+   
 export default App;
