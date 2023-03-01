@@ -23,6 +23,11 @@ function App(): JSX.Element {
                 <li> Thing2 </li>
                 <li> Thing3 </li>
             </ul>
+            <div className="Button">
+                <Button onClick={() => console.log("Hello World!")}>
+                    Log Hello World
+                </Button>
+            </div>
         </div>
     );
 }
