@@ -26,37 +26,41 @@ function App(): JSX.Element {
                 <li> Thing2 </li>
                 <li> Thing3 </li>
             </ul>
-<div>
-    <div className="Button">
-        <Button onClick={() => console.log("Hello World!")}>
-            Log Hello World
-        </Button>
-    </div>
-    <Container>
-        <Row>
-            <Col>
-                <div
-                    style={{
-                        backgroundColor: "red",
-                        width: 300,
-                        height: 500
-                    }}
-                />
-            </Col>
-            <Col>
-                <div
-                    style={{
-                        backgroundColor: "red",
-                        width: 300,
-                        height: 500
-                    }}
-                >
-                    You can put whatever you want in here, and it will be on the right side.
-                    Maybe try adding an image?
+            <div>
+                <div className="Button">
+                    <Button onClick={() => console.log("Hello World!")}>
+                        Log Hello World
+                    </Button>
                 </div>
-            </Col>
-        </Row>
-    </Container>
-</div>
+                <Container>
+                    <Row>
+                        <Col>
+                            <div
+                                style={{
+                                    backgroundColor: "red",
+                                    width: 200,
+                                    height: 400
+                                }}
+                            />
+                        </Col>
+                        <Col>
+                            <div
+                                style={{
+                                    backgroundColor: "red",
+                                    width: 200,
+                                    height: 400
+                                }}
+                            >
+                                You can put whatever you want in here, and it
+                                will be on the right side. Maybe try adding an
+                                image?
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+        </div>
+    );
+}
 
 export default App;
