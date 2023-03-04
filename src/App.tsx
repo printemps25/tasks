@@ -11,7 +11,7 @@ function App(): JSX.Element {
         <div className="App">
             <header
                 className="App-header"
-                style={{ backgroundColor: "lightblue" }}
+                style={{ backgroundColor: "darkgreen" }}
             >
                 UD CISC275 with React Hooks and TypeScript
             </header>
@@ -26,19 +26,37 @@ function App(): JSX.Element {
                 <li> Thing2 </li>
                 <li> Thing3 </li>
             </ul>
-            <div className="Button">
-                <Button onClick={() => console.log("Hello World!")}>
-                    Log Hello World
-                </Button>
-            </div>
-            <Container>
-                <Row>
-                    <Col>First column.</Col>
-                    <Col>Second column.</Col>
-                </Row>
-            </Container>
-        </div>
-    );
-}
+<div>
+    <div className="Button">
+        <Button onClick={() => console.log("Hello World!")}>
+            Log Hello World
+        </Button>
+    </div>
+    <Container>
+        <Row>
+            <Col>
+                <div
+                    style={{
+                        backgroundColor: "red",
+                        width: 300,
+                        height: 500
+                    }}
+                />
+            </Col>
+            <Col>
+                <div
+                    style={{
+                        backgroundColor: "red",
+                        width: 300,
+                        height: 500
+                    }}
+                >
+                    You can put whatever you want in here, and it will be on the right side.
+                    Maybe try adding an image?
+                </div>
+            </Col>
+        </Row>
+    </Container>
+</div>
 
 export default App;
