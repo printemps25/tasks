@@ -22,9 +22,9 @@ function App(): JSX.Element {
                 automatically reload. Karen Sousa. Hello World.
             </p>
             <ul>
-                <li> Thing1 </li>
-                <li> Thing2 </li>
-                <li> Thing3 </li>
+                <li> Dogs </li>
+                <li> Cats </li>
+                <li> Birds </li>
             </ul>
             <div>
                 <div className="Button">
@@ -41,7 +41,11 @@ function App(): JSX.Element {
                                     width: 200,
                                     height: 400
                                 }}
-                            />
+                            >
+                                You can put whatever you want in here, and it
+                                will be on the right side. Maybe try adding an
+                                image?
+                            </div>
                         </Col>
                         <Col>
                             <div
@@ -51,9 +55,7 @@ function App(): JSX.Element {
                                     height: 400
                                 }}
                             >
-                                You can put whatever you want in here, and it
-                                will be on the right side. Maybe try adding an
-                                image?
+                                I will just add text here for now.
                             </div>
                         </Col>
                     </Row>
