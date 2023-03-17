@@ -43,6 +43,11 @@ export function isCorrect(question: Question, answer: string): boolean {
  * be exactly one of the options.
  */
 export function isValid(question: Question, answer: string): boolean {
+    if (question.type === "short_answer_question") {
+        return true;
+    } else if (question.type === "multiple_choice_question") {
+        return question.options.includes(answer);
+    }
     return false;
 }
 
@@ -53,7 +58,9 @@ export function isValid(question: Question, answer: string): boolean {
  * name "My First Question" would become "9: My First Q".
  */
 export function toShortForm(question: Question): string {
-    return "";
+    const nameShort = question.name.slice(0, 10);
+    const shortForm = question.id + ": " + nameShort;
+    return shortForm;
 }
 
 /**
@@ -74,7 +81,16 @@ export function toShortForm(question: Question): string {
  * Check the unit tests for more examples of what this looks like!
  */
 export function toMarkdown(question: Question): string {
-    return "";
+    const formattedString = "# " + question.name + "\n" + question.body;
+    if (question.type === "multiple_choice_question") {
+        const modifiedOptions = question.options.map(function (
+            option: string
+        ): string {
+            return "- " + option;
+        });
+        return formattedString + "\n" + modifiedOptions.join("\n");
+    }
+    return formattedString;
 }
 
 /**
@@ -82,7 +98,9 @@ export function toMarkdown(question: Question): string {
  * `newName`.
  */
 export function renameQuestion(question: Question, newName: string): Question {
-    return question;
+    const newQuestion: Question = { ...question };
+    newQuestion.name = newName;
+    return newQuestion;
 }
 
 /**
@@ -91,7 +109,13 @@ export function renameQuestion(question: Question, newName: string): Question {
  * published; if it was published, now it should be not published.
  */
 export function publishQuestion(question: Question): Question {
-    return question;
+    const newVersionQuestion = { ...question };
+    if (question.published === false) {
+        newVersionQuestion.published = true;
+    } else {
+        newVersionQuestion.published = false;
+    }
+    return newVersionQuestion;
 }
 
 /**
@@ -101,7 +125,13 @@ export function publishQuestion(question: Question): Question {
  * The `published` field should be reset to false.
  */
 export function duplicateQuestion(id: number, oldQuestion: Question): Question {
-    return oldQuestion;
+    const copiedQuestion = {
+        ...oldQuestion,
+        id: id,
+        name: "Copy of " + oldQuestion.name,
+        published: false
+    };
+    return copiedQuestion;
 }
 
 /**
@@ -112,7 +142,12 @@ export function duplicateQuestion(id: number, oldQuestion: Question): Question {
  * Check out the subsection about "Nested Fields" for more information.
  */
 export function addOption(question: Question, newOption: string): Question {
-    return question;
+    const updatedOptions = [...question.options, newOption];
+    const updatedQuestion = {
+        ...question,
+        options: updatedOptions
+    };
+    return updatedQuestion;
 }
 
 /**
@@ -129,5 +164,12 @@ export function mergeQuestion(
     contentQuestion: Question,
     { points }: { points: number }
 ): Question {
-    return contentQuestion;
+    const mergedQuestion = {
+        ...contentQuestion,
+        id: id,
+        name: name,
+        points: points,
+        published: false
+    };
+    return mergedQuestion;
 }
